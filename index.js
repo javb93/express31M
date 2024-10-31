@@ -1,6 +1,7 @@
 //require,, palabra para utilizar librerias en nuestro proyecto
 const publicacionesController = require("./controllers/publicaciones");
 const userController = require("./controllers/user");
+const booksController = require("./controllers/books");
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
 const express = require("express");
@@ -17,6 +18,7 @@ app.get("/user/:id", userController.getUser);
 app.get("/publicaciones", publicacionesController.getPublicaciones);
 app.get("/publicaciones/:id", publicacionesController.getPublicacion);
 app.post("/publicacion", jsonParser, publicacionesController.postPublicacion);
+app.get("/books", booksController.getBooks);
 
 //Escuchar peticiones en el puerto 3000
 app.listen(3050, () => {
