@@ -5,7 +5,9 @@ const booksController = require("./controllers/books");
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
 const express = require("express");
+const cors = require("cors");
 const app = express();
+app.use(cors());
 //Crear un servidor, para escuchar peticiones en la ruta /, y devolver un mensaje
 // CORS
 // Cross origin request service, nos permite restringir de donde pueden venir las peticiones
